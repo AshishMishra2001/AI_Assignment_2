@@ -1,116 +1,93 @@
-🤖 AI Agents in a Simulated Kabaddi Environment
-AI Assignment II - Ashish Mishra
+# 🤖 AI Agents in a Simulated Kabaddi Environment
 
-This repository contains the full source code and analysis for a project designed to evaluate the performance of four distinct AI agents in a custom, grid-based Kabaddi game simulation.
+### AI Assignment II - Ashish Mishra
 
-📜 Overview
+This repository contains the full source code and analysis for a project designed to evaluate the performance of four distinct artificial intelligence agents in a custom, grid-based Kabaddi game simulation.
+
+---
+
+## 📜 Overview
 
 This project explores the fascinating challenge of creating intelligent agents for a strategic game. The goal is to determine a near-optimal sequence of moves for a two-player team to capture an opponent's gold treasure and return it to their home base.
 
 The solution implements and compares four powerful AI algorithms, each representing a different paradigm of decision-making:
 
-🧠 Random Agent: A non-intelligent agent for baseline performance.
-
-💡 Greedy Agent: A heuristic-driven agent that makes locally optimal choices.
-
-♟️ Alpha-Beta Search: A classical search-based agent that plans several moves ahead.
-
-🎲 Monte Carlo Tree Search (MCTS): A modern, simulation-based agent that uses probabilistic reasoning.
+-   **🧠 Random Agent:** A non-intelligent agent for baseline performance.
+-   **💡 Greedy Agent:** A heuristic-driven agent that makes locally optimal choices.
+-   **♟️ Alpha-Beta Search:** A classical search-based agent that plans several moves ahead.
+-   **🎲 Monte Carlo Tree Search (MCTS):** A modern, simulation-based agent that uses probabilistic reasoning.
 
 The agents were tested in two distinct environmental modes to analyze their adaptability:
+1.  **Turn-Based Mode:** A deterministic, predictable environment.
+2.  **Simultaneous-Move Mode:** An uncertain, complex environment where both teams act at once.
 
-Turn-Based Mode: A deterministic, predictable environment.
+## ✨ Key Features
 
-Simultaneous-Move Mode: An uncertain, complex environment where both teams act at once.
+-   **Complete Game Environment:** A fully functional Kabaddi simulation with configurable rules and game modes.
+-   **Four Distinct AI Agents:** From a simple baseline to advanced search and simulation algorithms.
+-   **Dual Gameplay Modes:** A robust tournament framework to test agents in both turn-based and simultaneous-move scenarios.
+-   **In-Depth Performance Analysis:** A detailed report and visual charts comparing the win, loss, and draw rates of all agent pairings.
 
-✨ Key Features
-
-Complete Game Environment: A fully functional Kabaddi simulation with configurable rules and game modes.
-
-Four Distinct AI Agents: From a simple baseline to advanced search and simulation algorithms.
-
-Dual Gameplay Modes: A robust tournament framework to test agents in both turn-based and simultaneous-move scenarios.
-
-In-Depth Performance Analysis: A detailed report and visual charts comparing the win, loss, and draw rates of all agent pairings.
-
-📊 Key Result at a Glance
+## 📊 Key Result at a Glance
 
 The core finding of this project is the critical impact of environmental uncertainty on agent performance. While the deterministic Alpha-Beta agent was unbeatable in the predictable turn-based mode, its advantage was completely nullified in the simultaneous mode, leading to strategic stalemates.
 
+---
 
-🚀 How to Run the Code
+## 🚀 How to Run the Code
 
-This project is implemented in Python 3 and is designed to be run seamlessly in a Google Colab environment. No local installation of libraries is required.
+This project is implemented in **Python 3** and is designed to be run seamlessly in a **Google Colab** environment. No local installation of libraries is required.
 
-Prerequisites
+### **Prerequisites**
+-   A web browser.
+-   A Google Account.
 
-A web browser.
+### **Execution Steps**
 
-A Google Account.
+1.  **Open the Notebook in Google Colab**
+    -   Navigate to the `Kabaddi_AI_Assignment.ipynb` file in this repository.
+    -   Click the **"Open in Colab"** button at the top of the file viewer.
 
-Execution Steps
+2.  **Run the Cells Sequentially**
+    The notebook is structured into several cells that must be executed in order.
 
-Open the Notebook in Google Colab
+    -   **Cell 1: Environment Setup**
+        -   **Purpose:** This cell uses the `%%writefile` command to create the `kabaddi_env.py` file, which defines all the game's rules and logic.
+        -   **Action:** Run the cell.
+        -   **Expected Output:** `Writing kabaddi_env.py`
 
-Navigate to the Kabaddi_AI_Assignment.ipynb file in this repository.
+    -   **Cell 2: Agent Implementation**
+        -   **Purpose:** This cell creates the `agents.py` file, which contains the code for all four AI agents.
+        -   **Action:** Run the cell.
+        -   **Expected Output:** `Writing agents.py`
 
-Click the "Open in Colab" button at the top of the file viewer.
+    -   **Cell 3 & 4: Tournament Execution**
+        -   **Purpose:** These are the main scripts. Cell 3 runs the complete **Turn-Based Tournament**, and Cell 4 runs the **Simultaneous-Move Tournament**. They will simulate games for each of the 6 unique agent pairings and print the results.
+        -   **Action:** Run Cell 3, wait for it to complete, then run Cell 4.
+        -   **Expected Output:** A detailed log of the tournament progress will be printed, followed by the final summary tables.
 
-Run the Cells Sequentially
-The notebook is structured into several cells that must be executed in order.
+        ```python
+        --- Running Full Tournament: TURN Mode (50 games each) ---
+        Starting Matchup: RandomAgent vs GreedyAgent...
+        Matchup: RandomAgent (A) vs GreedyAgent (B)
+          RandomAgent Wins: 0 (0%)
+          GreedyAgent Wins: 38 (76%)
+          Draws: 12 (24%)
+        ------------------------------
+        ... (and so on for all matchups)
+        ```
 
-Cell 1: Environment Setup
+---
 
-Purpose: This cell uses the %%writefile command to create the kabaddi_env.py file, which defines all the game's rules and logic.
-
-Action: Run the cell.
-
-Expected Output: Writing kabaddi_env.py
-
-Cell 2: Agent Implementation
-
-Purpose: This cell creates the agents.py file, which contains the code for all four AI agents.
-
-Action: Run the cell.
-
-Expected Output: Writing agents.py
-
-Cell 3 & 4: Tournament Execution
-
-Purpose: These are the main scripts. Cell 3 runs the complete Turn-Based Tournament, and Cell 4 runs the Simultaneous-Move Tournament. They will simulate 50 games for each of the 6 unique agent pairings and print the results.
-
-Action: Run Cell 3, wait for it to complete, then run Cell 4.
-
-Expected Output: A detailed log of the tournament progress will be printed, followed by the final summary tables.
-
-code
-Python
-download
-content_copy
-expand_less
---- Running Full Tournament: TURN Mode (50 games each) ---
-Starting Matchup: RandomAgent vs GreedyAgent...
-Matchup: RandomAgent (A) vs GreedyAgent (B)
-  RandomAgent Wins: 0 (0%)
-  GreedyAgent Wins: 38 (76%)
-  Draws: 12 (24%)
-------------------------------
-... (and so on for all matchups)
-📂 Project Structure
-code
-Code
-download
-content_copy
-expand_less
-.
-├── Kabaddi_AI_Assignment.ipynb     # The main Google Colab notebook with all code
-├── kabaddi_env.py                  # (Generated by Cell 1) Defines the game environment
-├── agents.py                       # (Generated by Cell 2) Defines all AI agents
-└── README.md                       # This file
+## 📂 Project Structure
+├── Kabaddi_AI_Assignment.ipynb # The main Google Colab notebook with all code
+├── kabaddi_env.py # (Generated by Cell 1) Defines the game environment
+├── agents.py # (Generated by Cell 2) Defines all AI agents
+├── images/ # (Recommended) Folder for report images
+│ ├── 1_game_board.png
+│ ├── 2_alpha_beta_pruning.png
+│ ├── ...
+└── README.md # This file```
 📈 Analysis of Results
-
 In the Turn-Based environment: The Alpha-Beta Search agent was unequivocally dominant. Its ability to plan ahead in a predictable environment allowed it to formulate unbeatable strategies.
-
 In the Simultaneous-Move environment: Alpha-Beta's performance collapsed. The uncertainty of concurrent moves violated its core assumptions, forcing it into a risk-averse, defensive strategy that resulted in a massive increase in draws.
-
-This highlights that an AI's effectiveness is not an intrinsic property but is highly contingent on the predictability of its environment.
